@@ -1,0 +1,49 @@
+body {
+  background: url('../imgfundo.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+section{
+ 
+ width: 350px;
+ height: 400px;
+}
+
+.rede{
+ width: 90px;
+ height: 90px;
+ float: left;
+ margin-left: 20px;
+ transition: all 0.4s ease-out;
+ border-radius: 50%;
+}
+
+.rede:hover{
+ cursor: pointer;
+ transform: translateY(-20px);
+ box-shadow: 4px 30px 16px 0px rgba(50,50,50, 0.45);
+}
+
+.rede#facebook{
+ background-color: #2372a3;
+
+
+}
+.rede#twitter{
+ background-color: #0084b4;
+
+}
+.rede#instagram{
+ background-color: #3f729b;
+}
+
+
+.icone{
+ 	margin:0px auto;
+ 	height: 60px;
+ 	width: 60px;
+ 	
+}

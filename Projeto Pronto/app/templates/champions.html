@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+<div class="container">
+
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+          <div class="row">
+            <div class="col-md-12" align="center" >
+  
+                <h1>
+                    Principais Campeonatos no ano de 2019!
+                </h1>
+  <br>
+              <img src="{{url_for('static', filename='imgcalen.jpg')}}">
+  <br><br>
+                <p align="Left">
+                    Programe-se com a agenda de torneios do game mais importante do esporte eletrônico. Confira a seguir:
+                      </p>
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    
+                    <th scope="col">Campeonato</th>
+                    <th scope="col">Data Inicial</th>
+                    <th scope="col">Data Final</th>
+                    <th scope="col">Premiação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for champion in champions %}
+                  <tr>
+                    <th> {{champion.name}}</th>
+                    <td> {{champion.initial_date }}</td>
+                    <td> {{champion.end_date }}</td>
+                    <td> {{champion.awards }}</td>
+                  </tr>
+                  {% endfor %}
+                  
+                  <!-- <tr>
+                    <th >iBUYPOWER Masters</th>
+                    <td>19 a 20 de janeiro</td>
+                    <td>US$ 200 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th>IEM Katowice - Minor das Américas</th>
+                    <td>22 a 26 de janeiro</td>
+                    <td>US$ 50 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th >ESL LA League - 3ª Temporada</th>
+                    <td>4 de fevereiro a 3 de março</td>
+                    <td>R$ 60 mil</td>
+                    
+                  </tr>
+  
+                   <tr>
+                    <th >IEM Katowice</th>
+                    <td>13 de fevereiro a 3 de março</td>
+                    <td>US$ 1 milhão</td>
+                    
+                  </tr>
+                  <tr>
+                    <th>WESG</th>
+                    <td>11 a 17 de março</td>
+                    <td>US$ 860 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th >BLAST Pro Series São Paulo</th>
+                    <td>22 a 23 de março</td>
+                    <td>US$ 230 mil</td>
+                    
+                  </tr>
+  
+                   <tr>
+                    <th >BLAST Pro Series Miami</th>
+                    <td>12 a 13 de abril</td>
+                    <td>US$ 250 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th>DreamHack Rio</th>
+                    <td>19 a 21 de abril</td>
+                    <td>US$ 100.000 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th >IEM Sydney</th>
+                    <td>30 de abril a 5 de maio</td>
+                    <td>US$ 250 mil</td>
+                    
+                  </tr>
+  
+                   <tr>
+                    <th >BLAST Pro Series Madri:</th>
+                    <td>10 a 11 de maio</td>
+                    <td>US$ 220 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th>DreamHack Masters Dallas</th>
+                    <td>28 de maio a 2 de junho</td>
+                    <td>US$ 250 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th >ESL One Colônia</th>
+                    <td>2 a 7 de julho</td>
+                    <td>US$ 300 mil</td>
+                    
+                  </tr>
+  
+                   <tr>
+                    <th >Major de Berlim - Minor das Américas</th>
+                    <td>17 a 21 de julho</td>
+                    <td>US$ 50 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th>Major de Berlim</th>
+                    <td>20 de agosto a 8 de setembro</td>
+                    <td>US$ 1 milhão</td>
+                    
+                  </tr>
+                  <tr>
+                    <th >DreamHack Montreal</th>
+                    <td>6 a 8 de setembro</td>
+                    <td>US$ 100 mil</td>
+                    
+                  </tr>
+  
+                   <tr>
+                    <th >DreamHack Roterdã</th>
+                    <td>18 a 20 de outubro</td>
+                    <td>US$ 100 mil</td>
+                    
+                  </tr>
+                  <tr>
+                    <th>DreamHack Winter</th>
+                    <td>29 de novembro a 1º de dezembro</td>
+                    <td>US$ 100 mil</td> -->
+                </tbody>
+              </table>
+  
+              
+  <br><br>
+              
+            </div> 
+            <!-- 
+            {{ wtf.quick_form(form) }}
+            -->
+<br><br>
+            <p>
+              Conhece algum Campeonato deste ano que não está em nossa tabela? Nos ajude cadastrando!<br>
+              Basta clicar no botão abaixo.<br><br>
+              <a class="btn btn-primary" href="{{url_for('main.add_champion')}}" >Cadastrar Evento</a>
+            </p>
+            
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+          <div class="row">
+            <div class="col-md-12" align="center" >
+                <h1>
+                    Neste semana chegou mais uma impactante atualização. Confira a seguir!
+                </h1>
+                <img src="{{url_for('static', filename='imgatt.png')}}">
+  <br><br>
+  
+                <p>
+                    Uma nova atualização foi lançada no Counter-Strike: Global Offensive nesta quarta-feira (13). O update traz diversas mudanças significativas no game, especialmente no que diz respeito às armas. As principais alterações ocorreram no lado de Contra-Terrorista, com as características armas AUG e M4A1-S.
+                </p>
+  <br>
+               <p>
+                   Em nota, a Valve anunciou que a AUG - que vinha aparecendo incessantemente tanto nas jogatinas casuais como nos maiores campeonatos do mundo - retornou ao seu preço antigo de US$ 3,3 mil. A M4A1-S, por outro lado, teve uma melhora e agora conta com 25 balas no seu pente (5 a mais que a versão anterior) e 75 na reserva.
+                  O sistema econômico do game também teve uma grande mudança. O que antes era chamado de "reset econômico", não existe mais. Agora, quando um time que estava perdendo muito vence uma rodada e perde outra logo em seguida, ele apenas perde "um nível" do seu loss bonus, ao invés de voltar ao loss bonus inicial de US$ 1,4 mil.
+               </p>
+  <br>
+              <p align="Left">Lembrando que os níveis são os seguintes:
+                  <ul align="Left">
+                       <li>0 perdas: US$ 1,4 mil</li>
+                       <li>1 perda: US$ 1,9 mil</li>
+                       <li>2 perdas: US$ 2,4 mil</li>
+                       <li>3 perdas: US$ 2,9 mil</li>
+                       <li>4 ou mais perdas: US$ 3,4 mil</li>
+                  </ul>
+              </p>
+  <br><br>
+              <p>
+                  A atualização também adicionou uma mudança positiva para os jogadores suportes das equipes. Agora, quando você cega um adversário para o seu companheiro matar, uma assistência será contabilizada - o "banga pra mim" será mais benéfico do que nunca!
+                  Os fãs de skins também foram agraciados com novidades: a nova Prisma Case já está dentro do jogo com novos visuais de armas e facas. A M4A4 é mais uma adição da coleção produzida por Luiza McAllister, ilustradora brasileira que possui diversas criações dentro do game.
+              </p>
+              <img src="{{url_for('static', filename='imgcase.jpg')}}">
+  <br><br>
+              <p>Por fim, o jogo também teve alteração no preço de algumas shotguns como a Nova, Mag-7 e Cano Curto, além de alterações nos mapas Canals e Vertigo. </p>
+            </div>          
+
+{% endblock %}

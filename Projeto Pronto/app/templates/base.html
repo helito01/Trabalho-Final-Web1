@@ -1,0 +1,156 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+    CSGO Toxic
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="shortcut icon" href= "{{url_for('static', filename='imgtoxico.png') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/fundo.css')}}">
+
+{% endblock %}
+
+
+{% block navbar %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+    <div class="container">
+      <div class="col-1">
+        
+        
+      </div>
+        <h2>
+          Toxic Go: <small> Um portal feito para Toxicos! <h6>Pois todos tem um nível de toxidade dentro de si.</h6></small>
+  
+        </h2>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('main.index')}}">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.sobre')}}" target="_blank">Sobre o Jogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('main.admin')}}">Admin</a>
+          </li>
+        </ul>
+<!--Usuário Deslogado-->
+{% if not current_user.is_authenticated %}
+        <div class="col-md-2">
+            <a href="{{url_for('auth.login')}}" target="_blank">
+              <button type="button" class="btn btn-success" >
+                Login
+              </button>
+            </a>
+        </div>
+        <div class="col-md-2">
+          <a href="{{url_for('auth.register')}}" target="_blank">
+            <button type="button" class="btn btn-success" >
+              Criar Conta
+            </button>
+          </a>
+      </div>
+<!--Usuário Logado-->
+{% else %}
+      <div class="col-md-2">
+          <a href="{{url_for('auth.logout')}}" target="_blank">
+            <button type="button" class="btn btn-success" >
+              Logout
+            </button>
+          </a>
+      </div> 
+{% endif %} 
+      </div>
+    </div>
+  </nav>
+{% endblock %}
+
+
+
+
+
+{% block content %}
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                {{ message }}
+            </div>
+        {% endfor %}
+            
+{% block page_content %} {% endblock %}
+
+
+{% block rodape %}
+<div class="card border-0 shadow my-5">
+  <div class="card-body p-5">   
+      
+    <hr color="black">
+
+    <div class="row">
+      <div class="col-md-6" id="Contato">
+        <h5>
+          Entre em contato <br>
+          <small>Tem alguma dúvida ou gostaria de dar uma sugestão? <br>
+              Entre em contato conosco, ficaremos felizes em receber seu Feedback :D
+          </small>
+        </h5>
+<br><br>
+        <form role="form">
+          <div class="form-group" >
+         
+            <label for="exampleInputEmail1">
+              Endereço de E-mail
+            </label>
+            <input type="email" style="width:500px; height:35px " class="form-control" id="exampleInputEmail1" />
+          </div>
+        <div class="form-group">
+         
+          <label for="exampleInputPassword1">
+            Mensagem
+          </label>
+          <input type="text" style="width:500px; height:100px " class="form-control" id="exampleInputPassword1" />
+        </div>
+     
+       
+      <button type="submit" class="btn btn-primary">
+        Enviar
+      </button>
+    </form>
+    
+  </div>
+  <div class="col-md-6" align="center">
+    <h5>
+      Siga a gente nas Redes Sociais <br>
+    </h5>
+<br><br><br>
+    <section>
+  <div class="rede" id="facebook">
+   <a href="https://www.facebook.com/Toxic-Go-2364384720447701/" target="_blank"> <img class="icone" src="{{url_for('static', filename='facebook.png')}}" /> </a>
+  </div>
+  <div class="rede" id="twitter">
+   <a href="https://twitter.com/ToxicGo1" target="_blank"> <img class="icone" src="{{url_for('static', filename='twitter.png')}}" /> </a>
+  </div>
+  <div class="rede" id="instagram">
+   <a href="https://www.instagram.com/toxic_go07/?hl=pt-br" target="_blank"> <img class="icone" src="{{url_for('static', filename='instagram.png')}}" /> </a>
+  </div>
+</section>
+    
+  </div>
+</div>
+  </div>
+</div>
+
+{% endblock %}
+
+   
+{% endblock %}
+
+

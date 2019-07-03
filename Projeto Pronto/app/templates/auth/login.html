@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %} CSGO Toxic {% endblock %} 
+
+{% block head %}
+    {{ super() }}
+    <link rel="shortcut icon" href= "{{url_for('static', filename='imgtoxico.png') }}" type="image/x-icon">
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container", aling='center'>
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+  <div class="container">
+    <a class="navbar-brand" href="#">Toxic Go | Login</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="col-md-2">
+           <a class="nav-link" href="{{url_for('main.index')}}">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </div>
+        
+  </div>
+</nav>
+<div class="container", aling='center'>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
+      </div>
+
+<img src="{{url_for('static', filename='imgtoxico.png')}}",height='250px', width='250px'>
+<br><br><br>
+
+
+
+<div class="col-md-4">
+      
+  {{ wtf.quick_form(form) }}
+    
+</div>
+</div>
+{% endblock %}

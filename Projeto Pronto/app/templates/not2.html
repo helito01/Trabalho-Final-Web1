@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+{% block page_content %}
+
+<div class="container">
+
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+          <div class="row">
+            <div class="col-md-12" align="center" >
+                <h1>
+                    IEM Katowice 2019: Astralis grande Campeã do Major.
+                </h1>
+  <br><br>
+                <p align="Left">
+                    A Astralis cumpriu o favoritismo na IEM Katowice e, neste domingo, se tornou campeã mundial de Counter-Strike: Global Offensive (CS:GO) pela terceira vez na história do jogo de tiro de Valve, sendo a segunda consecutiva. Sem dar chances para a zebra, o time dinamarquês passou por cima dos finlandeses da ENCE na final, conquistando a vitória por 2 a 0, com 16 a 11 na Train e 16 a 4 na Inferno - foi o 15º triunfo seguido no mapa. A equipe faturou US$ 500 mil (R$ 1,9 milhões) por levantar o troféu na Polônia. 
+                </p>
+                <img src="{{ url_for('static', filename='imgtimeA.png')}}">
+  <br><br>
+                    <p align="Left">
+                        Com três títulos mundiais de CS:GO, a Astralis chega ao mesmo patamar histórico da Fnatic no jogo. A organização britânica também conquistou três troféus de Major (DreamHack Winter 2013, ESL One Katowice 2015 e ESL One Colônia 2015), todos com quintetos formados por jogadores suecos.Nicolai "device", Peter "dupreeh", Andreas "Xyp9x", Lukas "gla1ve" e Emil "Magisk" formam a line-up da Astralis. O time do técnico Danny "zonic" está há quase 11 meses na liderança do ranking mundial feito pelo site especializado "HLTV". Em 2018, os dinamarqueses ganharam dez títulos e também completaram o Intel Grand Slam, bonificação de US$ 1 milhão (R$ 3,8 milhões).
+                        A IEM Katowice foi o primeiro Major de CS:GO de 2019. O segundo é o Major de Berlim, organizado pela StarLadder, de 20 de agosto a 8 de setembro.
+                    </p>
+  <br><br>
+  
+                    <h1>Resultados</h1>
+                    <p align="Left">
+                        Começando a série decisiva na Train, mapa de escolha da ENCE, os finlandeses levaram a melhor no pistol round e abriram 2 a 0 na sequência. A força da Astralis se impôs a partir do primeiro armado. Sem dar chances aos oponentes, o time de Magisk fechou o lado CT com 11 a 4 no placar. Na volta, a ENCE repetiu a boa atuação no round de pistolas e dessa vez seguiu triunfando até o primeiro armado. Os finlandeses seguiram combativos e chegaram a diminuir a diferença para 14 a 11, mas não foi o bastante. Com uma jogada impactante de Xyp6x, que venceu um clutch contra dois oponentes, a Astralis abriu o placar da final com 16 a 11.
+                        Assim como nas 14 últimas oportunidades, a Astralis passeou na Inferno. Jogando de forma metódica, os dinamarqueses anularam todas as tentativas de respostas dos adversários. Mesmo nas oportunidades em que conseguiu o primeiro abate, a ENCE não foi capaz de aproveitar a vantagem numérica. Foram dez rounds antes do primeiro ponto. Depois de 14 a 1 no lado TR, a atuação da Astralis como CT foi apenas burocracia antes da confirmação do título.
+                    </p>
+                    <img src="{{ url_for('static', filename='imgtimeA2.png')}}">
+            </div>
+        
+
+            
+            {{ wtf.quick_form(form) }}
+{% endblock %}
+
